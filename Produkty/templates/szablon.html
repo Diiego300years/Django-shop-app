@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Sklep</title>
-    <h1>Siema Eniu</h1>
-    {% for kat in kategorie %}
-    <p><a href= "kategoria/{{ kat.id }}"> {{ kat.nazwa }}</a> </p>
-    {% endfor %}
 </head>
+
 <body>
+
+    <div>
+        <h1>LOGO SKLEPU              wyszukiwarka            wyloguj</h1>
+    </div>
+
+    <div style="clear:both">
+
+    </div>
+
+    <div style="width:200px; float:left">
+        <h2> KATEGORIA </h2>
+        {% for kat in kategorie %}
+        <p><a href= "/kategoria/{{ kat.id }}"> {{ kat.nazwa }}</a> </p>
+        {% endfor %}
+    </div>
+
+    <div style="width:700px; float:left">
+        <h1> Witaj w sklepie z produktami, które pomogą zabdać o jakość powietrza w Twoim domu</h1>
+        {% block produkt %}    {% endblock produkt %}
+    </div>
+
 
 </body>
 </html>
