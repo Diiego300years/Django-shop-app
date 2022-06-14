@@ -26,7 +26,7 @@ class Kategoria(models.Model):
 
 
 class Movies(models.Model):
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=40, blank=True)
     image = models.ImageField(upload_to='Produkty/images')
 
 
