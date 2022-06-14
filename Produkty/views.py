@@ -35,3 +35,6 @@ def produkt (request, id):
     kategorie = Kategoria.objects.all()
     dane = {'produkt_user': produkt_user, 'kategorie': kategorie}
     return render(request, 'produkt.html', dane)
+
+def szablon(request):
+    return render(request, "szablon.html")

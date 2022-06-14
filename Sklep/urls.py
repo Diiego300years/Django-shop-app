@@ -16,12 +16,14 @@ Including another URLconf
 from Produkty.views import *
 from django.urls import path
 from django.contrib import admin
+from Produkty import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('kategoria/<id>/', kategoria, name='kategoria'),
     path('produkt/<id>/', produkt, name='produkt'),
+    path('', views.szablon)
 
     #to <id> jest zmienną i będzie przyjmować wartość liczbową 1,2,3
 ]
