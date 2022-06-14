@@ -25,6 +25,10 @@ class Kategoria(models.Model):
         verbose_name_plural = "Kategorie"
 
 
+class Movies(models.Model):
+    name = models.CharField(max_length=40)
+    image = models.ImageField(upload_to='Produkty/images')
+
 
 class Produkty(models.Model):
     def __str__(self):
@@ -35,6 +39,7 @@ class Produkty(models.Model):
     cena = models.DecimalField(max_digits=12, decimal_places=2)
     producent = models.ForeignKey(Producent, on_delete=models.CASCADE, null=True)
     kategoria = models.ForeignKey(Kategoria, null=True, blank=True, on_delete=models.CASCADE)
+    image = models.ForeignKey(Movies, null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Produkt"

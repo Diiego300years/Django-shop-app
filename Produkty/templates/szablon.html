@@ -1,5 +1,5 @@
 {% load static %}
-
+{{movie}}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -11,6 +11,8 @@
 </head>
 
 <body>
+<h3> {{   movie.name  }}</h3>
+<img style="max-width: 100px" src={{movie.image.url}}/>
 
     <div id="nawigacja">
         <h1 id="h1">LOGO SKLEPU              wyszukiwarka            wyloguj</h1>

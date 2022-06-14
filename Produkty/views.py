@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Produkty, Kategoria
+from .models import Produkty, Kategoria, Movies
 from django.shortcuts import render
 
 
@@ -14,10 +14,7 @@ def index(request):
     dane = {'kategorie': kategorie}
     return render(request, 'szablon.html', dane)
 
-"""
-    context = {'wszystkie': wszystkie,
-               'kategorie': kategorie}
-    return render(request, 'szablon.html', context)"""
+
 
 def kategoria (request, id):
     kategoria_user = Kategoria.objects.get(pk=id)
@@ -38,3 +35,10 @@ def produkt (request, id):
 
 def szablon(request):
     return render(request, "szablon.html")
+
+def movie(request, movie_id):
+    movie = Movies.objects.get(pk=movie_id)
+    if movie is not None:
+        return render(request, 'szablon.html', {'movie': movie})
+    else:
+        raise Http404('Movie does not exist')
